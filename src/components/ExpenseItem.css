@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.expense-div{
+    display: flex;
+    align-items: center;
+    margin: 0 20px 0 20px;
+}
+.expense-heading{
+    text-align: center;
+    color: rgb(54, 161, 197);
+    margin-top: 20px;
+    font-size: 30px;
+}
+
+.expenseName{
+    font-size: 15px;
+    margin: 10px 10px;
+    font-weight: bold;
+    font-size: 19px;
+}
+
+.price{
+    margin: 2px 0 0 0;
+}
