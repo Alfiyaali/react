@@ -1,26 +1,44 @@
 *{
     margin: 0;
     padding: 0;
+    background-color: rgb(84, 83, 83);
 }
-.expense-div{
-    display: flex;
-    align-items: center;
-    margin: 0 20px 0 20px;
-}
+
 .expense-heading{
     text-align: center;
-    color: rgb(54, 161, 197);
-    margin-top: 20px;
+    padding: 20px 0 20px 0;
     font-size: 30px;
 }
 
-.expenseName{
-    font-size: 15px;
-    margin: 10px 10px;
-    font-weight: bold;
-    font-size: 19px;
+.expense-item{
+    display: flex;
+    padding: 10px 0 15px 25px;
+    margin-bottom: 10px;
+}
+
+.expense-item_description{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.date{
+    display: flex;
+    font-size: 20px;
 }
 
 .price{
-    margin: 2px 0 0 0;
+    padding: 10px 15px 10px 15px;
+    border-radius: 10px;
+    background-color: rgb(11, 11, 57);
+    color: white;
+    float: right;
+    font-size: 15px;
+    border: 2px solid white;
+}
+
+.expenseName{
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
 }
