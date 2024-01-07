@@ -11,6 +11,7 @@ function ExpenseForm() {
         <input type="number" name="amount" id="amount" />
         <label htmlFor="">Expense Date</label>
         <input type="date" name="date" id="date" />
+        <button type='submit'>Submit</button>
       </form>
     </div>
   )
