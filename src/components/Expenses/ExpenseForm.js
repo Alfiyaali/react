@@ -1,55 +1,51 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react';
 import './ExpenseForm.css';
 
 const ExpenseForm = () => {
-        const [userInput, setUserInput] = useState({
-        enteredTitle: '',
-        enteredAmount: '',
-        enteredDate: ''
-    });
-    const titleChange = (event) =>{
-        // setUserInput({
-        //     ...userInput,
-        //     enteredTitle: event.target.value,
-        // })
+    const [enteredTitle, setEnteredTitle] = useState('');
+    const [enteredAmount, setEnteredAmount] = useState('');
+    const [enteredDate, setEnteredDate] = useState('');
 
-        setUserInput((prevState) =>{
-            return {...prevState, enteredTitle:event.target.value};
-        });
+    const titleChange = (event) => {
+        setEnteredTitle(event.target.value);
     };
-    const amountChange = (event) =>{
-        // setUserInput({
-        //     ...userInput,
-        //     enteredAmount: event.target.value,
-        // })
 
-        setUserInput((prevState) =>{
-            return {...prevState, enteredAmount:event.target.value};
-        });
+    const amountChange = (event) => {
+        setEnteredAmount(event.target.value);
     };
-    const dateChange = (event) =>{
-        // setUserInput({
-        //     ...userInput,
-        //     enteredDate: event.target.value,
-        // })
-        setUserInput((prevState) =>{
-            return {...prevState, enteredDate:event.target.value};
-        });
-        
-    };
-  return (
-    <div>
-      <form>
-        <label htmlFor="">Expense Title</label>
-        <input type="text" name="title" id="title" onChange={titleChange} />
-        <label htmlFor="">Expense Amount</label>
-        <input type="number" name="amount" id="amount" onChange={amountChange} />
-        <label htmlFor="">Expense Date</label>
-        <input type="date" name="date" id="date" onChange={dateChange} />
-        <button type='submit'>Submit</button>
-      </form>
-    </div>
-  )
-}
 
-export default ExpenseForm
+    const dateChange = (event) => {
+        setEnteredDate(event.target.value);
+    };
+
+    const submitHandler = (event) => {
+        event.preventDefault();
+
+        const formData = {
+            title: enteredTitle,
+            amount: enteredAmount,
+            date: new Date(enteredDate)
+        };
+
+        console.log(formData);
+        setEnteredTitle('');
+        setEnteredAmount('');
+        setEnteredDate('');
+    };
+
+    return (
+        <div>
+            <form onSubmit={submitHandler}>
+                <label htmlFor="title">Expense Title</label>
+                <input type="text" name="title" id="title" value={enteredTitle} onChange={titleChange} />
+                <label htmlFor="amount">Expense Amount</label>
+                <input type="number" name="amount" id="amount" value={enteredAmount} onChange={amountChange} />
+                <label htmlFor="date">Expense Date</label>
+                <input type="date" name="date" id="date" value={enteredDate} onChange={dateChange} />
+                <button type='submit'>Submit</button>
+            </form>
+        </div>
+    );
+};
+
+export default ExpenseForm;
